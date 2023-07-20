@@ -41,3 +41,11 @@ The final print statement will output the predicted numbers for the next lottery
 ## Note
 
 This project is a work in progress and the prediction method is based on random selection, so the accuracy of the predictions is not guaranteed.
+
+## Home Page | List of Past Results 
+![txlotteryscreen1](https://github.com/JennyO512/txlotteryrando/assets/99860222/a764e5cb-c2c5-48c1-803c-6d5f2ee7ec8b)
+
+## Predictive Numbers | using python random library, generating the computers next best guess based on the past results list from above ^
+![txlotteryscreen2](https://github.com/JennyO512/txlotteryrando/assets/99860222/baff2c7b-a520-46e6-a8ad-7049c9139d3f)
+
+
