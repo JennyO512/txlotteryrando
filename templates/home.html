@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Texas Lottery Numbers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .home-table {
+            border-collapse: collapse;
+            width: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .home-table th, .home-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .home-table th {
+            background-color: #4c81af;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Texas Lottery Numbers</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Scraped Numbers</h2>
+            <section>
+                <a href="{{ url_for('predictions') }}">See Predicted Numbers</a>
+            </section>
+            <br>
+             
+            <table class="home-table">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for number in numbers %}
+                    <tr>
+                        <td>{{ number }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <a href="{{ url_for('predictions') }}">See Predicted Numbers</a>
+        </section>
+    </main>
+</body>
+</html>

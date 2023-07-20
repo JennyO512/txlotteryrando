@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Texas Lottery Predictions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .prediction-table {
+            border-collapse: collapse;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .prediction-table th, .prediction-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .prediction-table th {
+            background-color: #4c81af;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Texas Lottery Predictions</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Predicted Numbers</h2>
+            <table class="prediction-table">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for number in predicted_numbers.split(' - ') %}
+                    <tr>
+                        <td>{{ number }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

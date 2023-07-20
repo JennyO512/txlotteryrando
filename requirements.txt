@@ -1,0 +1,13 @@
+Flask
+Flask-SQLAlchemy
+gunicorn
+opencv-python
+gradio
+torchvision
+replicate
+requests
+ffmpeg-python
+bs4
+random
+Pillow
+opencv-contrib-python
