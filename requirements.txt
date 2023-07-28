@@ -3,5 +3,5 @@ gunicorn
 bs4
 requests
 beautifulsoup4
-re
+regex
 random
