@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Texas Lottery Predictions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .soft-orange {
+            background-color: #ff7f50;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header>
+        <h1 class="text-center py-3 bg-primary text-white">Texas Lottery Predictions</h1>
+    </header>
+    <main class="container">
+        <section>
+            <h2 class="mb-4">Predicted Numbers</h2>
+            <h6 style="padding: 10px"> You can't win if you don't play</h6>
+            <div class="card mb-4">
+                <div class="card-body soft-orange text-center">
+                    <p>Est. Annuitized Jackpot</p>
+                    <h1>$11.25 Million</h1>
+                    <p>Est. Cash Value: <strong>$6.64 Million</strong></p>
+                    <p>Next Draw: <strong>07/29/2023</strong></p>
+                    <hr>
+                    <p>Results for: <strong>07/26/2023</strong></p>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        {% for number in predicted_numbers.split(' - ') %}
+                        <div class="p-2 m-1 border border-dark bg-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            {{ number }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

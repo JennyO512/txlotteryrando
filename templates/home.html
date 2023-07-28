@@ -2,56 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Lottery Numbers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        .home-table {
-            border-collapse: collapse;
-            width: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .home-table th, .home-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        .home-table th {
-            background-color: #4c81af;
-            color: white;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>Texas Lottery Numbers</h1>
-    </header>
-    <main>
-        <section>
-            <h2>Scraped Numbers</h2>
-            <section>
-                <a href="{{ url_for('predictions') }}">See Predicted Numbers</a>
-            </section>
+    <header class="mb-4">
+        <h1 class="text-center py-3 bg-primary text-white">Texas Lottery | Lotto Texas</h1>
+        <h5 style="padding: 15px">This web application scrapes the Texas Lottery website past numbers.  It then extracts the past winning numbers
+            and passes them to the Python random library generating a prediction for the next lottery drawing.</h5>
+
             <br>
-             
-            <table class="home-table">
-                <thead>
-                    <tr>
-                        <th>Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for number in numbers %}
-                    <tr>
-                        <td>{{ number }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </section>
+<hr>
+    </header>
+    <main class="container">
         <section>
-            <a href="{{ url_for('predictions') }}">See Predicted Numbers</a>
+            <h2 style="text: center" class="mb-4">Texas Lottery Past Numbers</h2>
+            <div class="mb-4">
+                <a href="{{ url_for('predictions') }}" class="btn btn-primary">See Predicted Numbers</a>
+            </div>
+             
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="text-center">Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for number in numbers %}
+                        <tr>
+                            <td class="text-center">{{ number }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="mt-4">
+            <a href="{{ url_for('predictions') }}" class="btn btn-primary">See Predicted Numbers</a>
         </section>
     </main>
 </body>
