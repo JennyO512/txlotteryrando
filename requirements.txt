@@ -2,6 +2,6 @@ flask
 gunicorn
 bs4
 requests
-BeautifulSoup
+beautifulsoup4
 re
 random
