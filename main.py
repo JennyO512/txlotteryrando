@@ -53,4 +53,4 @@ def predictions():
     return render_template('predictions2.html', predicted_numbers=predicted_numbers)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
