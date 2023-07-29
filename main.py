@@ -53,4 +53,5 @@ def predictions():
     return render_template('predictions2.html', predicted_numbers=predicted_numbers)
 
 if __name__ == "__main__":
-    app.run()
+    #app.run()
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
