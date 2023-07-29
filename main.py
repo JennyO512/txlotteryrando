@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import random
+import os
 
 app = Flask(__name__)
 
