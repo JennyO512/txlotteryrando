@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import random
+import pandas as pd
 import os
 
 app = Flask(__name__)
@@ -29,7 +30,7 @@ def extract_numbers(data):
     if not matches:
         print("No matches found")
     return matches
-
+"""
 def predict_next_numbers(numbers):
     last_digits = [int(n[-2:]) for n in numbers]
     freq = [last_digits.count(i) for i in range(100)]
@@ -37,6 +38,28 @@ def predict_next_numbers(numbers):
     next_numbers = random.sample(range(1, 53), 6)
     next_numbers = [str(num).zfill(2) for num in next_numbers]
     return " - ".join(next_numbers)
+"""
+
+#this was added on 10/19 to do a statistical analysis of the data 
+def predict_next_numbers(numbers):
+    last_digits = [int(n[-2:]) for n in numbers]
+    freq = [last_digits.count(i) for i in range(100)]
+    prob = [f / len(numbers) for f in freq]
+    next_numbers = pd.Series(range(1, 53)).sample(n=6, weights=prob, replace=False)
+    next_numbers = [str(num).zfill(2) for num in next_numbers]
+    return " - ".join(next_numbers)
+
+"""
+We import the pandas library and the random module.
+We replace the line that generates random numbers with a line that uses the sample method of a pandas Series object to generate the next numbers. The sample method takes three arguments:
+n: The number of samples to draw.
+weights: The probability weights associated with each element of the series. In this case, we use the prob list that we calculated earlier.
+replace: Whether to sample with replacement. We set this to False to ensure that we don’t get duplicate numbers.
+We convert the resulting series of numbers back to a list of strings and join them together with hyphens.
+
+"""
+#this was added on 10/19 to do a statistical analysis of the data 
+
 
 @app.route('/')
 def home():
