@@ -48,7 +48,7 @@ def predict_next_numbers(numbers):
     next_numbers = pd.Series(range(1, 53)).sample(n=6, weights=prob, replace=False)
     next_numbers = [str(num).zfill(2) for num in next_numbers]
     return " - ".join(next_numbers)
-    print(next_numbers)
+    #print(next_numbers)
 
 """
 We import the pandas library and the random module.
