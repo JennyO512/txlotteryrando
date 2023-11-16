@@ -77,7 +77,7 @@ def predictions():
     data = scrape_website(url)
     numbers = extract_numbers(data)
     predicted_numbers = predict_next_numbers(numbers)
-    return render_template('predictions.html', predicted_numbers=predicted_numbers)
+    return render_template('predictions2.html', predicted_numbers=predicted_numbers)
 
 if __name__ == "__main__":
     #app.run()
